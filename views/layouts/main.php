@@ -39,6 +39,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Товары', 'url' => ['/product/index']],
+            ['label' => 'Приемка', 'url' => ['/accept/index']],
+            ['label' => 'Продажа', 'url' => ['/sale/index']],
         ],
     ]);
     NavBar::end();

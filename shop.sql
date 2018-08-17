@@ -54,7 +54,7 @@ CREATE TABLE `accept_product` (
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(256) NOT NULL,
-  `quantity` int(10) UNSIGNED NOT NULL
+  `quantity` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

@@ -30,8 +30,9 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'quantity'], 'required'],
+            [['name'], 'required'],
             [['quantity'], 'integer'],
+            [['quantity'], 'default', 'value' => 0],
             [['name'], 'string', 'max' => 256],
         ];
     }
@@ -43,8 +44,8 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'quantity' => 'Quantity',
+            'name' => 'Название',
+            'quantity' => 'Остаток',
         ];
     }
 
