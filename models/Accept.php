@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\validators\NumberValidator;
 
 /**
  * This is the model class for table "accept".
@@ -14,6 +15,8 @@ use Yii;
  */
 class Accept extends \yii\db\ActiveRecord
 {
+	public $products;
+
     /**
      * {@inheritdoc}
      */
@@ -29,6 +32,7 @@ class Accept extends \yii\db\ActiveRecord
     {
         return [
             [['dt'], 'safe'],
+            ['products', 'validateProducts'],
         ];
     }
 
@@ -39,8 +43,31 @@ class Accept extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'dt' => 'Dt',
+            'dt' => 'Дата приемки',
+            'products' => 'Товары',
         ];
+    }
+
+	/**
+     * Email validation.
+     *
+     * @param $attribute
+     */
+    public function validateProducts($attribute)
+    {
+        $validator = new NumberValidator();
+        foreach($this->$attribute as $index => $row) {
+            $error = null;
+            foreach (['product_id', 'quantity'] as $name) {
+                $error = null;
+                $value = isset($row[$name]) ? $row[$name] : null;
+                $validator->validate($value, $error);
+                if (!empty($error)) {
+                    $key = $attribute . '[' . $index . '][' . $name . ']';
+                    $this->addError($key, $error);
+                }
+            }
+        }
     }
 
     /**

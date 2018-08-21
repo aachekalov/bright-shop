@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Accept */
 
-$this->title = 'Create Accept';
+$this->title = 'Приемка товаров';
 $this->params['breadcrumbs'][] = ['label' => 'Accepts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
