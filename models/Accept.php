@@ -49,7 +49,7 @@ class Accept extends \yii\db\ActiveRecord
     }
 
 	/**
-     * Email validation.
+     * Product validation.
      *
      * @param $attribute
      */

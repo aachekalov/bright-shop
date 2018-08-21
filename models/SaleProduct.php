@@ -45,7 +45,7 @@ class SaleProduct extends \yii\db\ActiveRecord
         return [
             'sale_id' => 'Sale ID',
             'product_id' => 'Product ID',
-            'quantity' => 'Quantity',
+            'quantity' => 'Количество',
         ];
     }
 

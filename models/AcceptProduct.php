@@ -45,7 +45,7 @@ class AcceptProduct extends \yii\db\ActiveRecord
         return [
             'accept_id' => 'Accept ID',
             'product_id' => 'Product ID',
-            'quantity' => 'Quantity',
+            'quantity' => 'Количество',
         ];
     }
 
